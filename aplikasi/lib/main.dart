@@ -3,6 +3,23 @@
 import 'package:flutter/material.dart';
 import 'package:aplikasi/bab 2/bab2.dart';
 import 'package:aplikasi/bab 2/bab_1.dart';
+import 'package:aplikasi/pages/align_page.dart';
+import 'package:aplikasi/pages/elevated_button_page.dart';
+import 'package:aplikasi/pages/grid_view_builder_page.dart';
+import 'package:aplikasi/pages/grid_view_count_page.dart';
+import 'package:aplikasi/pages/grid_view_custom_page.dart';
+import 'package:aplikasi/pages/grid_view_extent_page.dart';
+import 'package:aplikasi/pages/icon_page.dart';
+import 'package:aplikasi/pages/image_local_page.dart';
+import 'package:aplikasi/pages/image_network_page.dart';
+import 'package:aplikasi/pages/list_view_builder_page.dart';
+import 'package:aplikasi/pages/list_view_custom_page.dart';
+import 'package:aplikasi/pages/list_view_default_page.dart';
+import 'package:aplikasi/pages/list_view_separated_page.dart';
+import 'package:aplikasi/pages/padding_page.dart';
+import 'package:aplikasi/pages/penerapan_container_page.dart';
+import 'package:aplikasi/pages/stack_page.dart';
+import 'package:aplikasi/pages/text_field_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'halaman utama'),
+      home: const GridViewCountPage(),
     );
   }
 }
@@ -274,111 +291,118 @@ class _NamanimState extends State<Namanim> {
 }
 
 class PushNavigationPage extends StatefulWidget {
-  const PushNavigationPage({super.key});
+  const PushNavigationPage(
+      {super.key}); // Konstruktor untuk PushNavigationPage.
 
   @override
-  State<PushNavigationPage> createState() => _PushNavigationPageState();
+  State<PushNavigationPage> createState() =>
+      _PushNavigationPageState(); // Mengembalikan instance dari _PushNavigationPageState.
 }
 
 class _PushNavigationPageState extends State<PushNavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Membuat tampilan dasar dengan AppBar dan body.
       appBar: AppBar(
         title: const Text(
+          // Judul AppBar.
           'Push Navigation',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.w600), // Mengatur gaya teks.
         ),
       ),
       body: SafeArea(
+          // Memastikan konten tidak tertutup oleh notch atau status bar.
           child: Center(
         child: ElevatedButton(
             onPressed: () => Navigator.push(
+                // Menggunakan Navigator untuk pindah ke halaman baru.
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CenterPage(),
+                  builder: (context) => const CenterPage(), // Halaman tujuan.
                 )),
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, foregroundColor: Colors.white),
-            child: const Text('Go to detail Page')),
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white), // Mengatur gaya tombol.
+            child: const Text('Go to detail Page')), // Teks pada tombol.
       )),
     );
   }
 }
 
 class PushreplaceNavigationPage extends StatefulWidget {
-  const PushreplaceNavigationPage({super.key});
+  const PushreplaceNavigationPage(
+      {super.key}); // Konstruktor untuk PushreplaceNavigationPage.
 
   @override
   State<PushreplaceNavigationPage> createState() =>
-      _PushreplaceNavigationPageState();
+      _PushreplaceNavigationPageState(); // Mengembalikan instance dari _PushreplaceNavigationPageState.
 }
 
 class _PushreplaceNavigationPageState extends State<PushreplaceNavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Membuat tampilan dasar dengan AppBar dan body.
       appBar: AppBar(
         title: const Text(
+          // Judul AppBar.
           'Push Replace Navigation',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.w600), // Mengatur gaya teks.
         ),
       ),
       body: SafeArea(
           child: Center(
         child: ElevatedButton(
             onPressed: () => Navigator.pushReplacement(
+                // Menggunakan Navigator untuk mengganti halaman saat ini.
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CenterPage(),
+                  builder: (context) => const CenterPage(), // Halaman tujuan.
                 )),
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, foregroundColor: Colors.black),
-            child: const Text('Go to detail page')),
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.black), // Mengatur gaya tombol.
+            child: const Text('Go to detail page')), // Teks pada tombol.
       )),
     );
   }
 }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         title: 'quick note',
-//         theme: ThemeData(
-//             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-//             useMaterial3: true),
-//         initialRoute: '/',
-//         routes: {
-//           '/': (context) => const CenterPage(),
-//           '/detail': (context) => const ExpandedPage()
-//         });
-//   }
-// }
+// Kode yang di-commented seharusnya adalah bagian untuk penggunaan named routes.
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key}); // Konstruktor untuk HomePage.
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() =>
+      _HomePageState(); // Mengembalikan instance dari _HomePageState.
 }
 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Membuat tampilan dasar dengan AppBar dan body.
       appBar: AppBar(
         title: const Text(
+          // Judul AppBar.
           'Home',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.w600), // Mengatur gaya teks.
         ),
       ),
       body: SafeArea(
           child: Center(
         child: ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, '/detail'),
+            onPressed: () => Navigator.pushNamed(
+                context, '/detail'), // Navigasi menggunakan named routes.
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, foregroundColor: Colors.white),
-            child: Text('go to detail page')),
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white), // Mengatur gaya tombol.
+            child: Text('go to detail page')), // Teks pada tombol.
       )),
     );
   }
